@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+#import "SceneDelegate.h"
 
 @interface AppDelegate ()
 
@@ -19,28 +20,15 @@
     // Override point for customization after application launch.
     ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
 
-            configuration.applicationId = @"fJ9PMiIEx5fSsqvVnLuUEujB3z1v92TtoWyi8GIq"; // <- UPDATE
-            configuration.clientKey = @"jsj0eQVAdr0Cr7tqKUD4Tcth7E1BitACEqTbApok"; // <- UPDATE
+            configuration.applicationId = @"fJ9PMiIEx5fSsqvVnLuUEujB3z1v92TtoWyi8GIq";
+            configuration.clientKey = @"jsj0eQVAdr0Cr7tqKUD4Tcth7E1BitACEqTbApok"; 
             configuration.server = @"https://parseapi.back4app.com";
         }];
 
         [Parse initializeWithConfiguration:config];
-    /*
-    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
-    gameScore[@"score"] = @1337;
-    gameScore[@"playerName"] = @"Sean Plott";
-    gameScore[@"cheatMode"] = @NO;
-    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Object saved!");
-        } else {
-            NSLog(@"Error: %@", error.description);
-        }
-    }];
-     */
+    
     return YES;
 }
-
 
 #pragma mark - UISceneSession lifecycle
 
@@ -57,6 +45,7 @@
     // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
+
 
 
 @end
