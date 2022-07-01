@@ -48,7 +48,7 @@ Here's a walkthrough of implemented user stories:
 
 https://pxl.cl/274N2
 
-<img src='https://pxl.cl/274N2' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://pxl.cl/274N2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
