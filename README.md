@@ -49,9 +49,9 @@ Demo 1: https://imgur.com/a/E2c3cr1
 Demo 2: https://imgur.com/a/OVtqzpa
 Demo 3: https://imgur.com/a/G3GJZt5
 
-<img src='https://imgur.com/a/E2c3cr1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://imgur.com/a/OVtqzpa' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://imgur.com/a/G3GJZt5' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/E2c3cr1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/OVtqzpa.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/G3GJZt5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 GIF created with [Kap](https://getkap.co/).
