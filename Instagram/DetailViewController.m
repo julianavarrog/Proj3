@@ -40,39 +40,17 @@
     self.detailProfileImage.file = self.post.author[@"profilePic"];
     self.detailProfileImage.layer.cornerRadius = self.detailProfileImage.frame.size.height/2;
     
-    self.detailDate.text = self.post.updatedAt.description;
+//    self.detailDate.text = self.post.updatedAt.description;
     
     // Format createdAt date string
     
+    NSDate *postDate = self.post.createdAt;
     
-    NSString *createdAtOriginalString = self.post.updatedAt.description;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    // Configure the input format to parse the date string
-    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-    // Convert String to Date
-    NSDate *date = [formatter dateFromString:createdAtOriginalString];
-    // Configure output format
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    // Convert Date to String
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    formatter.dateStyle = NSDateFormatterShortStyle;
+//    formatter.timeStyle = NSDateFormatterNoStyle;
 
-    
-    NSString *dateSince = date.shortTimeAgoSinceNow;
-    if ([dateSince containsString:@"d"] || [dateSince containsString:@"w"] || [dateSince containsString:@"M"] || [dateSince containsString:@"y"]){
-        formatter.dateStyle = NSDateFormatterShortStyle;
-        formatter.timeStyle = NSDateFormatterNoStyle;
-        self.detailDate.text = [formatter stringFromDate: date];
-    } else {
-       self.detailDate.text  = dateSince;
-    }
-    
-    /*
-    if ([self.post likedByCurrent]){
-        [self.detailLikeButton [setImage[UIImage imageNamed:@"red"] forState:UIControlStateNormal];
-    }else{
-        [self.detailLikeButton [setImage[UIImage imageNamed:@"fav"] forState:UIControlStateNormal];
-    }
-     */
+    self.detailDate.text = [self.post.createdAt shortTimeAgoSinceNow]; // [formatter stringFromDate:postDate];
     
 }
 

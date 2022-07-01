@@ -18,8 +18,6 @@
 
 @property (strong, nonatomic) NSMutableArray *postsArray;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-- (IBAction)didTapProfileImage:(id)sender;
-
 
 
 @end
@@ -174,10 +172,18 @@
         self.profileImage.image = [self resizeImage:originalImage withSize:resizeSize];
     }
     
+    PFUser *user = [PFUser currentUser];
+    
+    PFFileObject *imageFile = [ProfileViewController getPFFileFromImage: self.profileImage.image];
+    user[@"profileImage"] = imageFile;
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    
 // Do something with the images (based on your use case)
     
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
+    // Dismiss UIImagePickerController to go back to your original view controller=
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -194,6 +200,22 @@
     return newImage;
 }
 
+
++ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
+ 
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
 
 
 /*

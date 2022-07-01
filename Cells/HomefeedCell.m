@@ -34,7 +34,7 @@
     NSString *screenName = [atName stringByAppendingString:post.author.username];
     self.feedTitle.text = screenName;
     
-    self.feedProfilePicture.file = self.post.author[@"profilePic"];
+    self.feedProfilePicture.file = self.post.author[@"profileImage"];
     self.feedCaption.text = post.caption;
     [self.feedImage loadInBackground];
     [self.feedProfilePicture loadInBackground];

@@ -142,8 +142,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWb-eV-4U7">
-                                <rect key="frame" x="20" y="120" width="145" height="135"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWb-eV-4U7">
+                                <rect key="frame" x="16" y="72" width="135" height="135"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=""/>
                                 <connections>
@@ -154,8 +154,10 @@
                         <viewLayoutGuide key="safeArea" id="KOP-Da-8ks"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MWb-eV-4U7" firstAttribute="top" secondItem="KOP-Da-8ks" secondAttribute="top" constant="16" id="6hr-3i-AIw"/>
-                            <constraint firstItem="MWb-eV-4U7" firstAttribute="leading" secondItem="KOP-Da-8ks" secondAttribute="leading" constant="16" id="Ab9-rB-PuO"/>
+                            <constraint firstItem="MWb-eV-4U7" firstAttribute="bottom" secondItem="J59-cb-lGu" secondAttribute="bottom" id="70Y-Fa-zj0"/>
+                            <constraint firstItem="MWb-eV-4U7" firstAttribute="trailing" secondItem="J59-cb-lGu" secondAttribute="trailing" id="OJm-H7-qrA"/>
+                            <constraint firstItem="MWb-eV-4U7" firstAttribute="top" secondItem="J59-cb-lGu" secondAttribute="top" id="a7K-AV-u4R"/>
+                            <constraint firstItem="MWb-eV-4U7" firstAttribute="leading" secondItem="J59-cb-lGu" secondAttribute="leading" id="k5B-lt-1od"/>
                             <constraint firstItem="J59-cb-lGu" firstAttribute="leading" secondItem="KOP-Da-8ks" secondAttribute="leading" constant="16" id="lLd-Jv-ciX"/>
                             <constraint firstItem="J59-cb-lGu" firstAttribute="top" secondItem="KOP-Da-8ks" secondAttribute="top" constant="16" id="ldZ-ST-PxX"/>
                         </constraints>
