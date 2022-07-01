@@ -45,10 +45,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-https://pxl.cl/274N2
+https://imgur.com/a/E2c3cr1
 
-<img src='https://pxl.cl/274N2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+<img src='https://imgur.com/a/E2c3cr1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/E2c3cr1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/E2c3cr1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 GIF created with [Kap](https://getkap.co/).
 
 ## Credits
