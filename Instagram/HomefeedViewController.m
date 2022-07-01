@@ -97,7 +97,7 @@
         //UINavigationController *navigationController = [segue destinationViewController];
         //DetailViewController *detailController = (DetailViewController*)navigationController.topViewController;
         //detailController.delegate = self;
-    }
+    }  
 }
 
 

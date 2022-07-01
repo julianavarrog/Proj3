@@ -35,6 +35,7 @@
     self.feedTitle.text = screenName;
     
     self.feedProfilePicture.file = self.post.author[@"profileImage"];
+    self.feedProfilePicture.layer.cornerRadius  = self.feedProfilePicture.frame.size.width/2;
     self.feedCaption.text = post.caption;
     [self.feedImage loadInBackground];
     [self.feedProfilePicture loadInBackground];
