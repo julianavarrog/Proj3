@@ -18,9 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.composeCaption.delegate =self;
-    //[self getPhotos];
-  //  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] intitWithTarget: self action: @selector(dissmissKeyboard)];
-   // [self.view addGestureRecognizer:tap];
 }
 
 - (IBAction)ImageTapped:(id)sender {
@@ -50,6 +47,7 @@
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
+
 - (IBAction)didSelectCameraRoll:(id)sender {
 }
 
@@ -72,14 +70,12 @@
     }
     
     // Do something with the images (based on your use case)
-    
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 - (IBAction)didTapShare:(id)sender {
-    // I need to get the image and caption
     UIImage *myImage = self.composeImage.image;
     NSString *myCaption = self.composeCaption.text;
     
@@ -91,8 +87,8 @@
         }
     }];
     [self dismissViewControllerAnimated:true completion:nil];
-    
 }
+
 - (IBAction)didTapCancel:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -111,15 +107,5 @@
     
     return newImage;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
