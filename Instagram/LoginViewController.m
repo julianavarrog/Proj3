@@ -16,15 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.dataSource = self;
-    //self.delegate = self;
-    // Do any additional setup after loading the view.
 }
 
-
 - (IBAction)LoginButton:(id)sender {
-//    NSString *username = self.usernameField.text;
-//    NSString *password = self.passwordField.text;
     [self loginUser];
 }
      
@@ -46,9 +40,7 @@
     [self registerUser];
 }
 
-
 -(void)registerUser{
-    
         // initialize a user object
         PFUser *newUser = [PFUser user];
         
@@ -64,8 +56,6 @@
                 NSLog(@"User registered successfully");
                 [self performSegueWithIdentifier:@"firstSegue" sender:nil];
                 NSLog(@"Segue called");
-
-
             }
         }];
 }

@@ -33,10 +33,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
-
-
 }
-
 
 -(void) getPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -44,6 +41,7 @@
     [query includeKey:@"author"];
     query.limit = 20;
     [self refreshControl];
+    
     //fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *post, NSError *error){
         [self.refreshControl endRefreshing];
@@ -57,10 +55,8 @@
     }];
 }
 
-
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
         if(error) {
             // Failure
         } else {
@@ -76,10 +72,9 @@
 
 
 #pragma mark - Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if([[segue identifier] isEqualToString:@"composeSegue"]){
@@ -87,16 +82,12 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
         
-    }else if ([[segue identifier] isEqualToString:@"detailSegue"]){
+    } else if([[segue identifier] isEqualToString:@"detailSegue"]){
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Post *poster = (Post *)self.postsArray[indexPath.section];
         DetailViewController *detailViewController = [segue destinationViewController];
         detailViewController.post = poster;
-                
-        //UINavigationController *navigationController = [segue destinationViewController];
-        //DetailViewController *detailController = (DetailViewController*)navigationController.topViewController;
-        //detailController.delegate = self;
     }  
 }
 
@@ -121,5 +112,6 @@
     insets.bottom += Infinite.defaultHeight;
     self.tableView.contentInset = insets;
 }
-    @end
+    
+@end
     

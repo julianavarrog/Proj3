@@ -1,5 +1,5 @@
-
 //  Post.h
+
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
 
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *commentCount;
 @property (nonatomic, strong) NSDate *updatedAt;
 
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void)postUserImage:(UIImage * _Nullable)image withCaption:(NSString * _Nullable)caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 @end
 

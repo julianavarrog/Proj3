@@ -5,7 +5,7 @@
 //  Created by Julia Navarro Goldaraz on 6/27/22.
 //
 
-#import "HomefeedCell.h"//
+#import "HomefeedCell.h"
 #import "AppDelegate.h"
 #import "Parse/PFImageView.h"
 
@@ -13,17 +13,15 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+     // Configure the view for the selected state
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void) refreshData{
-  // some code to refresh data
+  // no-op
 }
 
 - (void)setPost:(Post *)post {
@@ -39,21 +37,6 @@
     self.feedCaption.text = post.caption;
     [self.feedImage loadInBackground];
     [self.feedProfilePicture loadInBackground];
-    
-    /*
-    PFUser *user = [PFUser currentUser];
-    user[@"profilePic"] = self.feedProfilePicture.file;
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        
-    }];
-     */
 }
 
-
-/*
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    self = [super init];
-    
-}
-*/
 @end

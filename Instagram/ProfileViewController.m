@@ -15,13 +15,10 @@
 #import "Parse/PFImageView.h"
 #import "DateTools.h"
 
-
 @interface ProfileViewController ()<UIImagePickerControllerDelegate, UICollectionViewDataSource, UINavigationControllerDelegate, UITextViewDelegate >
-
 
 @property (strong, nonatomic) NSMutableArray *postsArray;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-
 
 @end
 
@@ -34,13 +31,7 @@
     self.postsArray = [[NSMutableArray alloc] init];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    
-    //[self getInfo];
-    
-    // Do any additional setup after loading the view.
 }
-
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ProfileCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProfileCollectionCell" forIndexPath:indexPath];
@@ -62,7 +53,6 @@
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
         if(error) {
             // Failure
         } else {
@@ -75,7 +65,6 @@
         }
    }];
 }
-
 
 -(void) getPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -100,6 +89,7 @@
     ProfileCell * cell = [collectionView cellForItemAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"profileDetailSegue" sender:cell];
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"profileDetailSegue"]){
         NSIndexPath *cellIndexPath = [self.collectionView indexPathForCell:sender];
@@ -111,8 +101,8 @@
 
 - (IBAction)didTapProfileImage:(id)sender {
     [self getPhotoLibrary];
-    
 }
+
 - (void)getPhotoLibrary{
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -123,8 +113,6 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
@@ -143,11 +131,6 @@
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
-    
-    
-// Do something with the images (based on your use case)
-    
-    // Dismiss UIImagePickerController to go back to your original view controller=
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -180,16 +163,5 @@
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
